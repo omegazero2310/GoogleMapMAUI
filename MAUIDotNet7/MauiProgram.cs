@@ -1,6 +1,9 @@
 ﻿#if ANDROID
 using GGMapMAUI.Platforms.Android;
 #endif
+#if IOS
+using GGMapMAUI.Platforms.iOS;
+#endif
 using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Controls.Compatibility.Hosting;
 
@@ -24,7 +27,10 @@ public static class MauiProgram
 #if ANDROID
 			handlers.AddCompatibilityRenderer(typeof(Maui.GoogleMaps.Map), typeof(MapRenderer));
 #endif
-		});
+#if IOS
+			handlers.AddCompatibilityRenderer(typeof(Maui.GoogleMaps.Map), typeof(MapRenderer));
+#endif
+        });
 
 #if DEBUG
         builder.Logging.AddDebug();
