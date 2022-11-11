@@ -1,4 +1,6 @@
-﻿namespace MAUIDotNet7;
+﻿using Maui.GoogleMaps;
+
+namespace MAUIDotNet7;
 
 public partial class MainPage : ContentPage
 {
