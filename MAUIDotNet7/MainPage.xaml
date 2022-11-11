@@ -6,9 +6,18 @@
     xmlns:maps="clr-namespace:Maui.GoogleMaps;assembly=GGMapMAUI">
 
     <ContentPage.Content>
-        <maps:Map
-            x:Name="map"
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand" />
+        <Grid RowDefinitions="*,50">
+            <maps:Map
+                x:Name="map"
+                Grid.Row="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
+
+            <Button
+                Grid.Row="1"
+                Clicked="Button_Clicked"
+                Text="Add polyline" />
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>
