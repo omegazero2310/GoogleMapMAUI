@@ -82,7 +82,7 @@ namespace GGMapMAUI.Platforms.Android
                 var tv = new TextView(Context)
                 {
                     Gravity = GravityFlags.Center,
-                    Text = "Xamarin.Forms.GoogleMaps"
+                    Text = "GGMapMAUI.GoogleMaps"
                 };
                 tv.SetBackgroundColor(Color.FromRgb(0,128,128).ToAndroid());
                 tv.SetTextColor(Color.FromRgb(0,0,0).ToAndroid());

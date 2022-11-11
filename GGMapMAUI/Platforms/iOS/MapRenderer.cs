@@ -92,7 +92,7 @@ namespace GGMapMAUI.Platforms.iOS
             {
                 var label = new UILabel()
                 {
-                    Text = "Xamarin.Forms.GoogleMaps",
+                    Text = "GGMapMAUI.GoogleMaps",
                     BackgroundColor = Microsoft.Maui.Graphics.Color.FromRgb(0, 125, 125).ToPlatform(),
                     TextColor = Microsoft.Maui.Graphics.Color.FromRgb(0, 0, 0).ToPlatform(),
                     TextAlignment = UITextAlignment.Center
