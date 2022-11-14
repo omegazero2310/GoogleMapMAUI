@@ -11,11 +11,12 @@ namespace GGMapMAUI.Platforms.iOS
     {
         public static bool IsInitialized { get; private set; }
 
-        public static void Init(string apiKey, PlatformConfig config = null)
+        public static void Init(string apiKey, PlatformConfig config = null, MauiContext context = null)
         {
             MapServices.ProvideApiKey(apiKey);
             GeocoderBackend.Register();
             MapRenderer.Config = config ?? new PlatformConfig();
+            MapRenderer.MauiContext = context;
             IsInitialized = true;
         }
     }

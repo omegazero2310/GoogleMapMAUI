@@ -5,12 +5,16 @@ using GGMapMAUI.Platforms.Android;
 using GGMapMAUI.Platforms.iOS;
 #endif
 using Microsoft.Extensions.Logging;
+using Microsoft.Maui;
 using Microsoft.Maui.Controls.Compatibility.Hosting;
+using Microsoft.Maui.Embedding;
+using Microsoft.Maui.Hosting;
 
 namespace MAUIDotNet7;
 
 public static class MauiProgram
 {
+	public static MauiContext MauiContext { get; private set; }
 	public static MauiApp CreateMauiApp()
 	{
 		var builder = MauiApp.CreateBuilder();
@@ -35,7 +39,6 @@ public static class MauiProgram
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
-
-		return builder.Build();
+        return builder.Build();
 	}
 }

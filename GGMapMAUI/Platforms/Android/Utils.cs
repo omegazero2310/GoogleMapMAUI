@@ -33,7 +33,7 @@ namespace GGMapMAUI.Platforms.Android
 
         public static Task<ViewGroup> ConvertFormsToNative(Microsoft.Maui.Controls.View view, Microsoft.Maui.Graphics.Rect size, IVisualElementRenderer vRenderer)
         {
-            return Task.Run(() => {
+            return Task.Run(() => {   
                 var viewGroup = (ViewGroup)vRenderer.View.Parent;
                 vRenderer.Tracker.UpdateLayout();
                 var layoutParams = new ViewGroup.LayoutParams((int)size.Width, (int)size.Height);

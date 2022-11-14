@@ -4,6 +4,7 @@ using GGMapMAUI.Platforms.iOS.Factories;
 using Google.Maps;
 using Maui.GoogleMaps;
 using Maui.GoogleMaps.Logics;
+using Microsoft.Maui.Platform;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -300,7 +301,7 @@ namespace GGMapMAUI.Platforms.iOS.Logics
                 NativeMap.InvokeOnMainThread(() =>
                 {
                     var iconView = outerItem.Icon.View;
-                    var nativeView = Utils.ConvertFormsToNative(iconView, new CGRect(0, 0, iconView.WidthRequest, iconView.HeightRequest));
+                    var nativeView = iconView.ToPlatform(iconView.Handler?.MauiContext ?? MapRenderer.MauiContext);
                     nativeView.BackgroundColor = UIColor.Clear;
                     nativeItem.GroundAnchor = new CGPoint(iconView.AnchorX, iconView.AnchorY);
                     nativeItem.Icon = Utils.ConvertViewToImage(nativeView);

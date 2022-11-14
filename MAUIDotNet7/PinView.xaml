@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<StackLayout
+    x:Class="MAUIDotNet7.PinView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    AnchorX="0.5"
+    AnchorY="1.0"
+    HeightRequest="48"
+    WidthRequest="37">
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <Image
+            AbsoluteLayout.LayoutBounds="0, 0, 37, 48"
+            AbsoluteLayout.LayoutFlags="None"
+            Source="pin_red.png" />
+
+        <Label
+            AbsoluteLayout.LayoutBounds="8, 10, 21, 16"
+            AbsoluteLayout.LayoutFlags="None"
+            BackgroundColor="Transparent"
+            FontSize="8"
+            HeightRequest="40"
+            HorizontalTextAlignment="Center"
+            Text="{Binding Display}"
+            TextColor="Black"
+            WidthRequest="100" />
+
+    </AbsoluteLayout>
+</StackLayout>

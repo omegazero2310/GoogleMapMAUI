@@ -16,6 +16,7 @@ namespace GGMapMAUI.Platforms.iOS
 {
     public class MapRenderer : ViewRenderer
     {
+        public static MauiContext MauiContext { get; set; }
         bool _shouldUpdateRegion = true;
 
         // ReSharper disable once MemberCanBePrivate.Global

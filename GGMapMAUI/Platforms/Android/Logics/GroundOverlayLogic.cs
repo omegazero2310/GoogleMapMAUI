@@ -7,6 +7,7 @@ using GGMapMAUI.Platforms.Android.Factories;
 using Maui.GoogleMaps;
 using Maui.GoogleMaps.Logics;
 using Microsoft.Maui.Controls.Shapes;
+using Microsoft.Maui.Platform;
 using GroundOverlay = Maui.GoogleMaps.GroundOverlay;
 using Map = Maui.GoogleMaps.Map;
 using NativeGroundOverlay = Android.Gms.Maps.Model.GroundOverlay;
@@ -151,10 +152,7 @@ namespace GGMapMAUI.Platforms.Android.Logics
             if (outerItem?.Icon?.Type == BitmapDescriptorType.View && outerItem.Icon?.View != null)
             {
                 var iconView = outerItem.Icon.View;
-                var nativeView = await Utils.ConvertFormsToNative(
-                    iconView,
-                    new Rect(0, 0, (double)Utils.DpToPx((float)iconView.WidthRequest), (double)Utils.DpToPx((float)iconView.HeightRequest)),
-                    Microsoft.Maui.Controls.Compatibility.Platform.Android.Platform.GetRenderer(iconView));
+                var nativeView = iconView.ToPlatform(iconView.Handler?.MauiContext ?? MapRenderer.MauiContext);
                 var otherView = new FrameLayout(nativeView.Context);
                 nativeView.LayoutParameters = new FrameLayout.LayoutParams(Utils.DpToPx((float)iconView.WidthRequest), Utils.DpToPx((float)iconView.HeightRequest));
                 otherView.AddView(nativeView);

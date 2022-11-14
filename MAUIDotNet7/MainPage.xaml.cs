@@ -4,12 +4,24 @@ namespace MAUIDotNet7;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
 	public MainPage()
 	{
 		InitializeComponent();
-	}
+        map.InitialCameraUpdate = CameraUpdateFactory.NewPositionZoom(new Position(35.71d, 139.81d), 12d);
+    }
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        var pin = new Pin()
+        {
+            Type = PinType.Place,
+            Label = "Tokyo SKYTREE TESSSSTTT",
+            Address = "Sumida-ku, Tokyo, Japan",
+            Position = new Position(35.71d, 139.81d),
+            Icon = BitmapDescriptorFactory.FromView(new PinView("Test Custom Pin"))
+        };
+        map.Pins.Add(pin);
+    }
     private void Button_Clicked(object sender, EventArgs e)
     {
         var polyline = new Polyline();

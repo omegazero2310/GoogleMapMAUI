@@ -3,7 +3,11 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
 using GGMapMAUI.Platforms.Android;
+using Maui.GoogleMaps.Logics;
 using MAUIDotNet7.Platforms.Android;
+using Microsoft.Maui;
+using Microsoft.Maui.Embedding;
+using Microsoft.Maui.Platform;
 
 namespace MAUIDotNet7;
 
@@ -17,8 +21,14 @@ public class MainActivity : MauiAppCompatActivity
         {
             BitmapDescriptorFactory = new CachingNativeBitmapDescriptorFactory()
         };
+        //Setup MauiBits
+        var mauiEmbeddedApp = MauiApp
+                            .CreateBuilder()
+                            .UseMauiEmbedding<Microsoft.Maui.Controls.Application>()
+                            .Build();
+        var mauiContext = new MauiContext(mauiEmbeddedApp.Services, this);
+        GGMapMAUI.Platforms.Android.FormsGoogleMaps.Init(this, savedInstanceState, platformConfig, mauiContext); // initialize for Xamarin.Forms.GoogleMaps
+        base.OnCreate(savedInstanceState);
 
-        GGMapMAUI.Platforms.Android.FormsGoogleMaps.Init(this, savedInstanceState, platformConfig); // initialize for Xamarin.Forms.GoogleMaps
-        base.OnCreate(savedInstanceState);       
     }
 }

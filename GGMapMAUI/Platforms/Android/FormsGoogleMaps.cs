@@ -17,7 +17,7 @@ namespace GGMapMAUI.Platforms.Android
 
         public static Context Context { get; private set; }
 
-        public static void Init(Activity activity, Bundle bundle, PlatformConfig config = null)
+        public static void Init(Activity activity, Bundle bundle, PlatformConfig config = null, MauiContext context = null)
         {
             if (IsInitialized)
                 return;
@@ -25,6 +25,7 @@ namespace GGMapMAUI.Platforms.Android
             Context = activity;
 
             MapRenderer.Bundle = bundle;
+            MapRenderer.MauiContext = context;
             MapRenderer.Config = config ?? new PlatformConfig();
 
 #pragma warning disable 618

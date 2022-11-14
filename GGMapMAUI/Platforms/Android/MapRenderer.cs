@@ -24,6 +24,7 @@ namespace GGMapMAUI.Platforms.Android
        GoogleMap.IOnMapLongClickListener,
        GoogleMap.IOnMyLocationButtonClickListener
     {
+        public static MauiContext MauiContext { get; set; }
         readonly CameraLogic _cameraLogic;
         readonly UiSettingsLogic _uiSettingsLogic = new UiSettingsLogic();
 
