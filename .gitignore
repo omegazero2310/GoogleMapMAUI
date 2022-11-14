@@ -361,5 +361,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/MAUIDotNet7/Platforms/iOS/AppDelegate.cs
-/MAUIDotNet7/Platforms/Android/AndroidManifest.xml

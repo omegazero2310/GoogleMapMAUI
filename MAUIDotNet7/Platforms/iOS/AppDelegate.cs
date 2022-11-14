@@ -23,7 +23,7 @@ public class AppDelegate : MauiUIApplicationDelegate
         var mauiApp = builder.Build();
         //add context
         var mauiContext = new MauiContext(mauiApp.Services);
-        GGMapMAUI.Platforms.iOS.FormsGoogleMaps.Init("AIzaSyA693e6AYFtx0zye2mFJm3aXNgEAfL_cNM", platformConfig, mauiContext);
+        GGMapMAUI.Platforms.iOS.FormsGoogleMaps.Init("google map key here", platformConfig, mauiContext);
         return base.FinishedLaunching(application, launchOptions);
     }
 }
